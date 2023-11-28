@@ -16,8 +16,8 @@ struct ScaledImageView: View {
     }
 }
 //
-//struct ScaledImageView_Previews: PreviewProvider {
+// struct ScaledImageView_Previews: PreviewProvider {
 //    static var previews: some View {
 //        ScaledImageView()
 //    }
-//}
+// }

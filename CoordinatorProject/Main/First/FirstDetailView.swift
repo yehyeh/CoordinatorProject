@@ -8,18 +8,13 @@
 import SwiftUI
 
 struct FirstDetailView: View {
-    
     @ObservedObject var viewModel: FirstTabViewModel
-    
     var body: some View {
-        
         VStack {
             Text("First Detail")
-            
-            TextField("name", text: $viewModel.name)
+         TextField("name", text: $viewModel.name)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
-            
-            TextField("email", text: $viewModel.email)
+         TextField("email", text: $viewModel.email)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
         }
         .padding()

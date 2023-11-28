@@ -8,23 +8,20 @@
 import SwiftUI
 
 struct OnboardingView: View {
-    
-    var doneRequested: () -> ()
-    
+
+    var
+doneRequested: () -> Void
     var body: some View {
         TabView {
-            
-            ScaledImageView(name: "cat")
+         ScaledImageView(name: "cat")
                 .tag(0)
             ScaledImageView(name: "lama")
                 .tag(1)
             ScaledImageView(name: "rose")
                 .tag(2)
-            
             Button("Done") {
                 doneRequested()
             }
-            
         }
         .tabViewStyle(PageTabViewStyle())
         .background(Color.black
@@ -37,5 +34,3 @@ struct OnboardingView_Previews: PreviewProvider {
         OnboardingView(doneRequested: { })
     }
 }
-
-

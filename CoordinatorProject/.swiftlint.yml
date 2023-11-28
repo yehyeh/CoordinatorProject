@@ -1,4 +1,13 @@
+
 opt_in_rules:
-    - indentation_width
+    - todo
+
+analyzer_rules:
     - explicit_self
-    - operator_usage_whitespace
+
+identifier_name:
+    max_length:
+        warning: 45
+        error: 60
+    min_length:
+        warning: 1
