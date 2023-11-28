@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0DABEEE72B154D4900EC57A4 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0DABEEE62B154D4900EC57A4 /* .swiftlint.yml */; };
 		175393FB280D5790003030D2 /* main.gif in Resources */ = {isa = PBXBuildFile; fileRef = 175393FA280D5790003030D2 /* main.gif */; };
 		175393FD280D57D5003030D2 /* onboarding.gif in Resources */ = {isa = PBXBuildFile; fileRef = 175393FC280D57D5003030D2 /* onboarding.gif */; };
 		1782E7482811775A005772E3 /* coordinator.png in Resources */ = {isa = PBXBuildFile; fileRef = 1782E7472811775A005772E3 /* coordinator.png */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0DABEEE62B154D4900EC57A4 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		175393FA280D5790003030D2 /* main.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = main.gif; sourceTree = "<group>"; };
 		175393FC280D57D5003030D2 /* onboarding.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = onboarding.gif; sourceTree = "<group>"; };
 		1782E7472811775A005772E3 /* coordinator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coordinator.png; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				17ECF639280C438F00D3E87F /* Assets.xcassets */,
 				17ECF63B280C438F00D3E87F /* LaunchScreen.storyboard */,
 				17ECF63E280C438F00D3E87F /* Info.plist */,
+				0DABEEE62B154D4900EC57A4 /* .swiftlint.yml */,
 			);
 			path = CoordinatorProject;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 17ECF641280C438F00D3E87F /* Build configuration list for PBXNativeTarget "CoordinatorProject" */;
 			buildPhases = (
+				0DABEEE52B154A7500EC57A4 /* ShellScript */,
 				17ECF629280C438F00D3E87F /* Sources */,
 				17ECF62A280C438F00D3E87F /* Frameworks */,
 				17ECF62B280C438F00D3E87F /* Resources */,
@@ -202,7 +206,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1330;
-				LastUpgradeCheck = 1330;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					17ECF62C280C438F00D3E87F = {
 						CreatedOnToolsVersion = 13.3;
@@ -232,6 +236,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DABEEE72B154D4900EC57A4 /* .swiftlint.yml in Resources */,
 				1782E7482811775A005772E3 /* coordinator.png in Resources */,
 				1782E74A28117761005772E3 /* communication.png in Resources */,
 				17ECF63D280C438F00D3E87F /* LaunchScreen.storyboard in Resources */,
@@ -243,6 +248,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0DABEEE52B154A7500EC57A4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Adds support for Apple Silicon brew directory\n#export PATH=\"$PATH:/opt/homebrew/bin\"\n#if [[ \"$(uname -m)\" == arm64 ]]; then\n#    export PATH=\"/opt/homebrew/bin:$PATH\"\n#fi\n\nif which swiftlint; then\n    swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		17ECF629280C438F00D3E87F /* Sources */ = {
@@ -286,6 +311,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -318,6 +344,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -346,6 +373,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -378,6 +406,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -404,6 +433,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 54YLWD89Z8;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CoordinatorProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -432,6 +462,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 54YLWD89Z8;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CoordinatorProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
